@@ -1,0 +1,55 @@
+extends pug/base
+
+append vars
+
+block content
+	//- ...
+	.player
+		.player__top
+			.player__top-left
+				.player__menu
+					.player__menu-item A0324 (Model_1)
+					.player__menu-item A0324 (Model_2)
+					.player__menu-item.player__menu-item--active A0324 (Model_3)
+			.player__top-right
+				.player__top-buttons
+					.player__button
+						span Отклонить
+					.player__button.player__button--focus
+						span Принять
+					.player__button.player__button--chat
+						+svg("chat")
+						span Чат
+				.player__top-close
+					+svg("close")
+		.player__middle
+			.player__middle-menu
+				.player__list
+					.player__list-title 
+						+svg("dropdown")
+						| Действия
+					.player__list-content
+						mixin list-item(data)
+							.player__list-item
+								+svg(data.icon)
+								span=data.title
+						.player__list-items
+							+list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
+							+list-item({title: 'Верхняя челюсть', icon: 'up'})
+							+list-item({title: 'Нижняя челюсть', icon: 'down'})
+						.player__list-items
+							+list-item({title: 'Скрыть десны', icon: 'lines'})
+						.player__list-items
+							+list-item({title: 'Сепарация', icon: 'lines'})
+							+list-item({title: 'Окклюзиограмма', icon: 'lines'})
+							+list-item({title: 'Сетка', icon: 'lines'})
+							+list-item({title: 'Режим наложения', icon: 'lines'})
+			img(src='images/object.png')
+		.player__bottom
+			.player__controls
+				.player__control
+				.player__control
+				.player__control.player__control--big
+				.player__control
+				.player__control
+			.player__timeline
