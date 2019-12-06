@@ -18,6 +18,7 @@
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
 		z-index: 1;
+		transition: all 150ms ease;
 
 		&--hide {
 			transform: translateY(-56px);
@@ -56,6 +57,7 @@
 				position: absolute;
 				bottom: 15px;
 				left: calc(50% - 7.5px);
+				transition: all 150ms ease;
 			}
 		}
 
@@ -97,6 +99,49 @@
 			top: 15px;
 			left: 0;
 			display: flex;
+		}
+
+		&-graph {
+			display: flex;
+			position: absolute;
+			top: 52px;
+			right: 0;
+			transition: all 150ms ease;
+
+			&-points {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: 4px 0 6px;
+				width: 102px;
+
+				span {
+					position: relative;
+					font-size: 14px;
+					line-height: 17px;
+					color: #000000;
+					&::after {
+						content: '';
+						width: 20px;
+						height: 1px;
+						background: #E4E4E4;
+						position: absolute;
+						right: 8px;
+						top: 9px;
+					}
+				}
+			}
+
+			&--hide {
+				opacity: 0;
+			}
+
+			&-gradient {
+				width: 42px;
+				height: 320px;
+				background: linear-gradient(180deg, #0174E2 0%, #0175E2 15.56%, #1AD842 43.81%, #F4EA09 67.62%, #F73401 100%);
+				border-radius: 20px 0 0 20px;
+			}
 		}
 	}
 
