@@ -1,0 +1,97 @@
+.irs--custom {
+	height: 50px;
+  }
+  .irs--custom.irs-with-grid {
+	height: 65px;
+  }
+  .irs--custom .irs-line {
+	top: 36px;
+	height: 6px;
+	background-color: #dee4ec;
+	border-radius: 0;
+	background: linear-gradient(180deg, #DADADA 0%, #FFFFFF 100%);
+	border: 1px solid #BBBBBB;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  .irs--custom .irs-bar {
+	top: 36px;
+	height: 6px;
+	background-color: #1896DF;
+  }
+  .irs--custom .irs-bar--single {
+	border-radius: 0;
+  }
+  .irs--custom .irs-shadow {
+	height: 6px;
+	bottom: 21px;
+	background-color: rgba(222, 228, 236, 0.5);
+  }
+  .irs--custom .irs-handle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 26px;
+	width: 25px;
+	height: 25px;
+	border: 1px solid #BBBBBB;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+
+	&::before {
+		content: url('../../images/arrows.svg');
+	}
+  }
+  .irs--custom .irs-handle.state_hover,
+  .irs--custom .irs-handle:hover {
+	background-color: #f0f6ff;
+  }
+  .irs--custom .irs-min,
+  .irs--custom .irs-max {
+	color: #333;
+	font-size: 14px;
+	line-height: 1;
+	top: 0;
+	padding: 3px 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+  }
+  .irs--custom .irs-from,
+  .irs--custom .irs-to,
+  .irs--custom .irs-single {
+	font-size: 14px;
+	line-height: 1;
+	text-shadow: none;
+	padding: 6px;
+	background-color: #1896DF;
+	color: white;
+	border-radius: 4px;
+  }
+  .irs--custom .irs-from:before,
+  .irs--custom .irs-to:before,
+  .irs--custom .irs-single:before {
+	position: absolute;
+	display: block;
+	content: "";
+	bottom: -6px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -3px;
+	overflow: hidden;
+	border: 3px solid transparent;
+	border-top-color: #1896DF;
+  }
+  .irs--custom .irs-grid {
+	height: 25px;
+  }
+  .irs--custom .irs-grid-pol {
+	background-color: #dedede;
+  }
+  .irs--custom .irs-grid-text {
+	color: silver;
+	font-size: 13px;
+  }
+  .irs-single {
+	  top: -22px!important;
+  }

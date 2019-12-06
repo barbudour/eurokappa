@@ -268,7 +268,9 @@ html(class=html.classList)&attributes(html.attrs)
 				link(rel="mask-icon" href=link.maskIcon.href color=link.maskIcon.color)
 		block styles
 			link(rel="stylesheet" href=`${baseDir}css/main.css?v=${Date.now()}`)
+			link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css')
 		block head-end
+			script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
 	body(class=body.classList)&attributes(body.attrs)
 		block body-start
 		block content

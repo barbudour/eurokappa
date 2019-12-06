@@ -6,6 +6,8 @@ block content
 	//- ...
 	.player
 		.player__top
+			.player__top-arrow
+				+svg("arrows")
 			.player__top-left
 				.player__menu
 					.player__menu-item A0324 (Model_1)
@@ -24,32 +26,52 @@ block content
 					+svg("close")
 		.player__middle
 			.player__middle-menu
-				.player__list
-					.player__list-title 
+				.player__list.player__list--active
+					.player__list-title
 						+svg("dropdown")
 						| Действия
 					.player__list-content
 						mixin list-item(data)
-							.player__list-item
+							.player__list-item(class={"player__list-item--active": data.active})
 								+svg(data.icon)
 								span=data.title
 						.player__list-items
-							+list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
+							//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
 							+list-item({title: 'Верхняя челюсть', icon: 'up'})
-							+list-item({title: 'Нижняя челюсть', icon: 'down'})
+							+list-item({title: 'Нижняя челюсть', icon: 'down', active: true})
 						.player__list-items
-							+list-item({title: 'Скрыть десны', icon: 'lines'})
+							+list-item({title: 'Скрыть десны', icon: 'lines', active: true})
+							+list-item({title: 'Открыть челюсть', icon: 'scull'})
+							+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
 						.player__list-items
-							+list-item({title: 'Сепарация', icon: 'lines'})
-							+list-item({title: 'Окклюзиограмма', icon: 'lines'})
-							+list-item({title: 'Сетка', icon: 'lines'})
-							+list-item({title: 'Режим наложения', icon: 'lines'})
+							+list-item({title: 'Сепарация', icon: 'separate', active: true})
+							+list-item({title: 'Окклюзиограмма', icon: 'graph'})
+							+list-item({title: 'Сетка', icon: 'grid'})
+							+list-item({title: 'Режим наложения', icon: 'check', active: true})
+				.player__list.player__list--active
+					.player__list-title 
+						+svg("dropdown")
+						| Вид
+					.player__list-content
+						.player__list-items
+							+list-item({title: 'Вид спереди', icon: 'front-view', active: true})
+							+list-item({title: 'Вид сзади', icon: 'back-view'})
+							+list-item({title: 'Вид справа', icon: 'right-view'})
+							+list-item({title: 'Вид слева', icon: 'left-view'})
+							+list-item({title: 'Вид сверху', icon: 'top-view'})
+							+list-item({title: 'Вид снизу', icon: 'bottom-view'})
 			img(src='images/object.png')
 		.player__bottom
+			.player__timeline
+				input.js-range-slider(type='text' name='timeline' value='')
 			.player__controls
 				.player__control
+					+svg('button-1')
 				.player__control
+					+svg('button-2')
 				.player__control.player__control--big
+					+svg('button-3')
 				.player__control
+					+svg('button-4')
 				.player__control
-			.player__timeline
+					+svg('button-5')
