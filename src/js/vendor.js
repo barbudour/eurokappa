@@ -2,11 +2,12 @@ import '@babel/polyfill';
 // import $ from 'jquery';
 import svg4everybody from 'svg4everybody';
 import ionRangeSlider from 'ion-rangeslider';
+import remodal from 'remodal';
 
 svg4everybody();
 // window.$ = $;
 // window.jQuery = $;
-
+window.remodal = remodal;
 window.ionRangeSlider = ionRangeSlider;
 
 $(".js-range-slider").ionRangeSlider({
@@ -48,6 +49,14 @@ $(".js-range-slider").ionRangeSlider({
 });
 
 require('ninelines-ua-parser');
+
+$('.player__menu-item--view').on('click', function () {
+	$('.player').toggleClass('player__two');
+})
+
+$('#menu').on('click', function () {
+	$('.player__top-left').toggleClass('player__top-left--show');
+})
 
 $('.player__top-arrow').on('click', function () {
 	$('.player__top').toggleClass('player__top--hide');
