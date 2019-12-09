@@ -10,6 +10,7 @@ body {
 	grid-column-gap: 0px;
 	background-color: #F7FAFF;
 	background-image: url('../images/pattern.png');
+	overflow: hidden;
 
 	@include tablet {
 		grid-template-rows: 113px 1fr 62px;
@@ -31,8 +32,8 @@ body {
 		.player__bottom--second {
 			display: grid;
 		}
-		.player__middle-menu {
-			transform: translateY(40px);
+		.player__middle-menu--second {
+			transform: translateY(40px) translateX(40px);
 		}
 	}
 
