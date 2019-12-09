@@ -66,10 +66,6 @@ $('.player__top-arrow').on('click', function () {
 	$('.player__middle-menu').toggleClass('player__middle-menu--small');
 })
 
-$("body > div.player > div.player__middle > div.player__middle-menu > div:nth-child(1) > div.player__list-content > div:nth-child(3) > div:nth-child(2)").on('click', function () {
-	$('.player__middle-graph').toggleClass('player__middle-graph--hide');
-})
-
 $('.player__top-close').on('click', function () {
 	window.close();
 })

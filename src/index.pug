@@ -29,7 +29,7 @@ block content
 				.player__top-close
 					+svg("close")
 		.player__middle.player__middle--first
-			.player__middle-graph.player__middle-graph--hide
+			.player__middle-graph.player__middle-graph--hide#graph
 				.player__middle-graph-points
 					span 0,42 мм
 					span 0,30 мм
@@ -44,7 +44,7 @@ block content
 						| Действия
 					.player__list-content
 						mixin list-item(data)
-							.player__list-item(class={"player__list-item--active": data.active, "player__list-item--check": data.check, "player__list-item--view": data.view})
+							.player__list-item(target=data.target class={"player__list-item--active": data.active, "player__list-item--check": data.check, "player__list-item--view": data.view})
 								+svg(data.icon)
 								span=data.title
 						.player__list-items
@@ -57,7 +57,7 @@ block content
 							+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
 						.player__list-items
 							+list-item({title: 'Сепарация', icon: 'separate', active: true})
-							+list-item({title: 'Окклюзиограмма', icon: 'graph'})
+							+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph'})
 							+list-item({title: 'Сетка', icon: 'grid'})
 							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
 				.player__list.player__list--active
@@ -74,7 +74,7 @@ block content
 							+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
 			img(src='images/object.png')
 		.player__middle.player__middle--second
-			.player__middle-graph.player__middle-graph--hide
+			.player__middle-graph.player__middle-graph--hide#graph2
 				.player__middle-graph-points
 					span 0,42 мм
 					span 0,30 мм
@@ -98,7 +98,7 @@ block content
 							+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
 						.player__list-items
 							+list-item({title: 'Сепарация', icon: 'separate', active: true})
-							+list-item({title: 'Окклюзиограмма', icon: 'graph'})
+							+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph2'})
 							+list-item({title: 'Сетка', icon: 'grid'})
 							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
 				.player__list.player__list--active

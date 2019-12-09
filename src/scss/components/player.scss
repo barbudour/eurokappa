@@ -31,6 +31,9 @@ body {
 		.player__bottom--second {
 			display: grid;
 		}
+		.player__middle-menu {
+			transform: translateY(40px);
+		}
 	}
 
 	&__top {
@@ -56,6 +59,9 @@ body {
 
 		&--hide {
 			transform: translateY(-56px);
+			@include tablet {
+				transform: translateY(-113px);
+			}
 
 			.player__top-arrow {
 				svg {
@@ -97,7 +103,9 @@ body {
 			cursor: pointer;
 
 			@include tablet {
-				display: none;
+				//display: none;
+				top: 72px;
+				z-index: -1;
 			}
 
 			&::before {
@@ -225,7 +233,7 @@ body {
 			&--small {
 				top: -46px;
 				@include tablet {
-					top: initial;
+					top: -103px;
 				}
 			}
 		}
@@ -488,6 +496,8 @@ body {
 				padding: 0;
 				min-width: auto;
 				width: 52px;
+				height: 52px;
+				font-size: 0;
 			}
 
 			svg {
@@ -496,6 +506,10 @@ body {
 				margin: 0 13px 0 0;
 				transform: rotate(180deg);
 				transition: transform 150ms ease;
+
+				@include tablet {
+					margin: auto;
+				}
 			}
 		}
 
@@ -510,7 +524,7 @@ body {
 			border-radius: 0 0 4px 4px;
 
 			@include tablet {
-				top: 0;
+				//top: 0;
 			}
 		}
 
