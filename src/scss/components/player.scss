@@ -42,7 +42,7 @@ body {
 		grid-template-rows: 1fr;
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
-		z-index: 1;
+		z-index: 2;
 		transition: all 150ms ease;
 
 		@include tablet {
@@ -195,6 +195,16 @@ body {
 
 		&--second {
 			display: none;
+			&::before {
+				content: '';
+				width: 2px;
+				height: 200vh;
+				top: -50vh;
+				left: -1px;
+				background: #8C949C;
+				position: absolute;
+				z-index: 1;
+			}
 		}
 
 		img {
@@ -211,6 +221,13 @@ body {
 			top: 15px;
 			left: 0;
 			display: flex;
+			transition: top 150ms ease;
+			&--small {
+				top: -46px;
+				@include tablet {
+					top: initial;
+				}
+			}
 		}
 
 		&-graph {
@@ -288,7 +305,7 @@ body {
 			font-weight: 600;
 			font-size: 16px;
 			line-height: 20px;
-			color: #3192D0;
+			color: #8C949C;
 			cursor: pointer;
 
 			@include mobile {
@@ -304,6 +321,9 @@ body {
 			}
 
 			&--active {
+				color: #3192D0;
+			}
+			&--static {
 				color: #000000;
 			}
 		}

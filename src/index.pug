@@ -12,8 +12,8 @@ block content
 				+svg("arrows")
 			.player__top-left
 				.player__menu
-					.player__menu-item.player__menu-item--active Заказ A0324
-					.player__menu-item.player__menu-item--view Model_1
+					.player__menu-item.player__menu-item--static Заказ A0324
+					.player__menu-item.player__menu-item--view.player__menu-item--active Model_1
 					.player__menu-item.player__menu-item--view Model_2
 			.player__top-right
 				.player__top-buttons
@@ -44,7 +44,7 @@ block content
 						| Действия
 					.player__list-content
 						mixin list-item(data)
-							.player__list-item(class={"player__list-item--active": data.active, "player__list-item--check": data.check})
+							.player__list-item(class={"player__list-item--active": data.active, "player__list-item--check": data.check, "player__list-item--view": data.view})
 								+svg(data.icon)
 								span=data.title
 						.player__list-items
@@ -66,12 +66,12 @@ block content
 						| Вид
 					.player__list-content
 						.player__list-items
-							+list-item({title: 'Вид спереди', icon: 'front-view', active: true})
-							+list-item({title: 'Вид сзади', icon: 'back-view'})
-							+list-item({title: 'Вид справа', icon: 'right-view'})
-							+list-item({title: 'Вид слева', icon: 'left-view'})
-							+list-item({title: 'Вид сверху', icon: 'top-view'})
-							+list-item({title: 'Вид снизу', icon: 'bottom-view'})
+							+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
+							+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
+							+list-item({title: 'Вид справа', icon: 'right-view', view: true})
+							+list-item({title: 'Вид слева', icon: 'left-view', view: true})
+							+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
+							+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
 			img(src='images/object.png')
 		.player__middle.player__middle--second
 			.player__middle-graph.player__middle-graph--hide
@@ -88,10 +88,6 @@ block content
 						+svg("dropdown")
 						| Действия
 					.player__list-content
-						mixin list-item(data)
-							.player__list-item(class={"player__list-item--active": data.active, "player__list-item--check": data.check})
-								+svg(data.icon)
-								span=data.title
 						.player__list-items
 							//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
 							+list-item({title: 'Верхняя челюсть', icon: 'up'})
@@ -111,12 +107,12 @@ block content
 						| Вид
 					.player__list-content
 						.player__list-items
-							+list-item({title: 'Вид спереди', icon: 'front-view', active: true})
-							+list-item({title: 'Вид сзади', icon: 'back-view'})
-							+list-item({title: 'Вид справа', icon: 'right-view'})
-							+list-item({title: 'Вид слева', icon: 'left-view'})
-							+list-item({title: 'Вид сверху', icon: 'top-view'})
-							+list-item({title: 'Вид снизу', icon: 'bottom-view'})
+							+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
+							+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
+							+list-item({title: 'Вид справа', icon: 'right-view', view: true})
+							+list-item({title: 'Вид слева', icon: 'left-view', view: true})
+							+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
+							+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
 			img(src='images/object.png')
 		.player__bottom.player__bottom--first
 			.player__timeline

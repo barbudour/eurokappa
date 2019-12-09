@@ -1,16 +1,12 @@
-const lists = document.querySelectorAll('.player__list');
-var i;
-for (i = 0; i < lists.length; i++) {
-	let list = lists[i];
-	let title = lists[i].querySelector('.player__list-title');
-	title.addEventListener('click', () => {
-		list.classList.toggle('player__list--active');
-	})
-}
-const items = document.querySelectorAll('.player__list-item');
-for (i = 0; i < items.length; i++) {
-	let item = items[i];
-	item.addEventListener('click', () => {
-		item.classList.toggle('player__list-item--active')
-	})
-}
+$('.player__list-title').on('click', function () {
+	$(this).parent().toggleClass('player__list--active');
+});
+$('.player__list-item').on('click', function () {
+	let view = $(this).hasClass('player__list-item--view');
+	if (view) {
+		$(this).parent().find('.player__list-item--view').removeClass('player__list-item--active');
+		$(this).addClass('player__list-item--active');
+	} else {
+		$(this).toggleClass('player__list-item--active');
+	}
+});

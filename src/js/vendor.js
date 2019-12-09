@@ -51,6 +51,7 @@ $(".js-range-slider").ionRangeSlider({
 require('ninelines-ua-parser');
 
 $('.player__menu-item--view').on('click', function () {
+	$(this).toggleClass('player__menu-item--active');
 	$('.player').toggleClass('player__two');
 })
 
@@ -60,6 +61,7 @@ $('#menu').on('click', function () {
 
 $('.player__top-arrow').on('click', function () {
 	$('.player__top').toggleClass('player__top--hide');
+	$('.player__middle-menu').toggleClass('player__middle-menu--small');
 })
 
 $("body > div.player > div.player__middle > div.player__middle-menu > div:nth-child(1) > div.player__list-content > div:nth-child(3) > div:nth-child(2)").on('click', function () {
