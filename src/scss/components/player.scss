@@ -652,3 +652,23 @@ body {
 		}
 	}
 }
+.toastify {
+	position: absolute;
+	top: 106px!important;
+	left: 50%;
+	z-index: 999;
+	border-radius: 16px;
+	padding: 5px 10px;
+	color: #159D43;
+	font-size: 14px;
+	box-shadow: 0px 3px 6px #33333330;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 150ms ease;
+	.toast-close {
+		display: none;
+	}
+	&.on {
+		opacity: 1;
+	}
+}

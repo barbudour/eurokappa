@@ -3,12 +3,14 @@ import '@babel/polyfill';
 import svg4everybody from 'svg4everybody';
 import ionRangeSlider from 'ion-rangeslider';
 import remodal from 'remodal';
+import Toastify from 'toastify-js';
 
 svg4everybody();
 // window.$ = $;
 // window.jQuery = $;
 window.remodal = remodal;
 window.ionRangeSlider = ionRangeSlider;
+window.toastify = Toastify;
 
 $(".js-range-slider").ionRangeSlider({
 	min: 0,
@@ -71,3 +73,17 @@ $("body > div.player > div.player__middle > div.player__middle-menu > div:nth-ch
 $('.player__top-close').on('click', function () {
 	window.close();
 })
+
+$('#confirmModel').on('click', function () {
+	toastify({
+		text: 'DM1 Принята для выполнения',
+		duration: 3000,
+		newWindow: true,
+		close: true,
+		gravity: 'top', // `top` or `bottom`
+		position: 'center', // `left`, `center` or `right`
+		backgroundColor: '#ffffff',
+		stopOnFocus: true, // Prevents dismissing of toast on hover
+		// onClick: function(){} // Callback after click
+	}).showToast();
+});
