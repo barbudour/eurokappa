@@ -61,7 +61,7 @@ block content
 							+list-item({title: 'Сетка', icon: 'grid'})
 							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
 				.player__list.player__list--active
-					.player__list-title 
+					.player__list-title
 						+svg("dropdown")
 						| Вид
 					.player__list-content
@@ -106,7 +106,7 @@ block content
 							+list-item({title: 'Сетка', icon: 'grid'})
 							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
 				.player__list.player__list--active
-					.player__list-title 
+					.player__list-title
 						+svg("dropdown")
 						| Вид
 					.player__list-content
@@ -147,10 +147,10 @@ block content
 				.player__control
 					+svg('button-5')
 	.modals
-		.remodal.modal(data-remodal-id="cancel")
+		.remodal.modal.modal--textarea(data-remodal-id="cancel")
 			button.modal__close(data-remodal-action="close" class="remodal-close")
 			h3.modal__title Подтверждение
-			.modal__text Отклонить модель?
+			textarea.modal__textarea(placeholder="Комментарий" rows="4")
 			.modal__buttons
 				.player__button(data-remodal-action="cancel")
 					+svg("cancel")
