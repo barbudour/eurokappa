@@ -62,6 +62,9 @@ body {
 			@include tablet {
 				transform: translateY(-113px);
 			}
+			@include mobile {
+				transform: translateY(-70px);
+			}
 
 			.player__top-arrow {
 				svg {
@@ -106,6 +109,10 @@ body {
 				//display: none;
 				top: 72px;
 				z-index: -1;
+			}
+
+			@include mobile {
+				top: 30px;
 			}
 
 			&::before {
@@ -234,6 +241,9 @@ body {
 				top: -46px;
 				@include tablet {
 					top: -103px;
+				}
+				@include mobile {
+					top: -60px;
 				}
 			}
 		}
