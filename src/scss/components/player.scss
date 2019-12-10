@@ -14,11 +14,12 @@ body {
 
 	@include tablet {
 		grid-template-rows: 113px 1fr 62px;
+		min-height: 700px;
 	}
 
 	@include mobile {
-		overflow: hidden;
 		grid-template-rows: 70px 1fr 62px;
+		min-height: 568px;
 	}
 
 	&__two {
