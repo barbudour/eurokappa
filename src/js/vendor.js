@@ -52,6 +52,8 @@ $(".js-range-slider").ionRangeSlider({
 
 require('ninelines-ua-parser');
 
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+
 $('.player__menu-item--view').on('click', function () {
 	$(this).toggleClass('player__menu-item--active');
 	$('.player').toggleClass('player__two');
@@ -59,6 +61,14 @@ $('.player__menu-item--view').on('click', function () {
 
 $('#menu').on('click', function () {
 	$('.player__top-left').toggleClass('player__top-left--show');
+})
+
+$('.player__menu-item--view').on('click', function () {
+	if (isMobile) {
+		$('.player__top-left').toggleClass('player__top-left--show');
+		$('.player__menu-item--view').removeClass('player__menu-item--active');
+		$(this).addClass('player__menu-item--active');
+	}
 })
 
 $('.player__top-arrow').on('click', function () {

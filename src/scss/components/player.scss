@@ -1,6 +1,7 @@
 body {
 	font-family: $montserrat;
 }
+
 .player {
 	height: 100vh;
 	display: grid;
@@ -24,17 +25,42 @@ body {
 
 	&__two {
 		grid-template-columns: 1fr 1fr;
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+
 		.player__top {
 			grid-area: 1 / 1 / 2 / 3;
+			@include mobile {
+				grid-area: initial;
+			}
 		}
+
 		.player__middle--second {
 			display: flex;
 		}
+
+		.player__middle:not(.player__middle--second) {
+			@include mobile {
+				display: none;
+			}
+		}
+
 		.player__bottom--second {
 			display: grid;
 		}
+
+		.player__bottom:not(.player__bottom--second) {
+			@include mobile {
+				display: none;
+			}
+		}
+
 		.player__middle-menu--second {
 			transform: translateX(40px);
+			@include mobile {
+				transform: initial;
+			}
 		}
 	}
 
@@ -100,33 +126,13 @@ body {
 		&-arrow {
 			position: absolute;
 			top: 16px;
+			top: 100%;
 			left: calc(50% - 40px);
 			width: 80px;
-			height: 80px;
+			height: 40px;
 			background: #3192D0;
-			border-radius: 0 0 50% 50%;
+			border-radius: 0 0 80px 80px;
 			cursor: pointer;
-
-			@include tablet {
-				//display: none;
-				top: 72px;
-				z-index: -1;
-			}
-
-			@include mobile {
-				top: 30px;
-			}
-
-			&::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 40px;
-				background: #ffffff;
-				pointer-events: none;
-			}
 
 			svg {
 				width: 15px;
@@ -147,6 +153,7 @@ body {
 				height: 100vh;
 				display: none;
 			}
+
 			&--show {
 				@include mobile {
 					display: block;
@@ -186,10 +193,12 @@ body {
 		&-close {
 			padding: 0 16px;
 			z-index: 1;
+
 			svg {
 				width: 20px;
 				height: 20px;
 			}
+
 			@include tablet {
 				position: absolute;
 				top: 19px;
@@ -212,6 +221,7 @@ body {
 
 		&--second {
 			display: none;
+
 			&::before {
 				content: '';
 				width: 2px;
@@ -239,6 +249,7 @@ body {
 			left: 0;
 			display: flex;
 			transition: top 150ms ease;
+
 			&--small {
 				top: -46px;
 				@include tablet {
@@ -269,6 +280,7 @@ body {
 					font-size: 14px;
 					line-height: 17px;
 					color: #000000;
+
 					&::after {
 						content: '';
 						width: 20px;
@@ -303,6 +315,7 @@ body {
 		grid-column-gap: 20px;
 		grid-row-gap: 0px;
 		justify-content: center;
+
 		&--second {
 			display: none;
 		}
@@ -343,6 +356,7 @@ body {
 			&--active {
 				color: #3192D0;
 			}
+
 			&--static {
 				color: #000000;
 			}
@@ -480,6 +494,7 @@ body {
 		&--active {
 			.player__list-title {
 				border-radius: 4px 4px 0 0;
+
 				svg {
 					transform: rotate(0deg);
 				}
@@ -586,9 +601,11 @@ body {
 				@include mobile {
 					display: none;
 				}
+
 				svg {
 					fill: #ffffff;
 				}
+
 				&.player__list-item--active {
 					svg {
 						fill: #1896DF;
@@ -601,7 +618,7 @@ body {
 
 .remodal-wrapper {
 	display: flex;
-    align-items: center;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -610,14 +627,16 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 516px!important;
-	padding: 60px 83px!important;
+	max-width: 516px !important;
+	padding: 60px 83px !important;
 	@include mobile {
-		padding: 60px 20px!important;
+		padding: 60px 20px !important;
 	}
+
 	&--textarea {
 		//padding: 60px 60px!important;
 	}
+
 	&__title {
 		font-style: normal;
 		font-weight: 500;
@@ -626,6 +645,7 @@ body {
 		color: #000000;
 		margin: 0 0 12px;
 	}
+
 	&__textarea {
 		padding: 13px 23px;
 		font-style: normal;
@@ -641,10 +661,12 @@ body {
 		@include mobile {
 			margin: 0 0 20px;
 		}
+
 		&::placeholder {
 			color: #8B8B8B;
 		}
 	}
+
 	&__text {
 		width: 350px;
 		font-style: normal;
@@ -658,29 +680,34 @@ body {
 			width: auto;
 		}
 	}
+
 	&__buttons {
 		display: flex;
 		justify-content: center;
+
 		> div:not(:last-child) {
 			margin: 0 25px 0 0;
 		}
 	}
+
 	&__close {
-		width: 20px!important;
-		height: 20px!important;
-		top: 20px!important;
-		right: 20px!important;
-		left: initial!important;
-		background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L21 21' stroke='%233192D0' stroke-width='2'/%3E%3Cpath d='M21 1L1 21' stroke='%233192D0' stroke-width='2'/%3E%3C/svg%3E%0A")!important;
-		background-size: contain!important;
+		width: 20px !important;
+		height: 20px !important;
+		top: 20px !important;
+		right: 20px !important;
+		left: initial !important;
+		background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L21 21' stroke='%233192D0' stroke-width='2'/%3E%3Cpath d='M21 1L1 21' stroke='%233192D0' stroke-width='2'/%3E%3C/svg%3E%0A") !important;
+		background-size: contain !important;
+
 		&::before {
-			content: none!important;
+			content: none !important;
 		}
 	}
 }
+
 .toastify {
 	position: absolute;
-	top: 106px!important;
+	top: 106px !important;
 	left: 50%;
 	z-index: 999;
 	border-radius: 16px;
@@ -691,9 +718,11 @@ body {
 	transform: translateX(-50%);
 	opacity: 0;
 	transition: opacity 150ms ease;
+
 	.toast-close {
 		display: none;
 	}
+
 	&.on {
 		opacity: 1;
 	}
