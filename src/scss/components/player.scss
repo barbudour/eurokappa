@@ -2,6 +2,10 @@ body {
 	font-family: $montserrat;
 }
 
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .player {
 	height: 100vh;
 	display: grid;
@@ -187,6 +191,12 @@ body {
 					@include mobile {
 						margin: 0 16px 0 0;
 					}
+				}
+			}
+			&--confirm {
+				> *:nth-child(1),
+				> *:nth-child(2) {
+					display: none;
 				}
 			}
 		}

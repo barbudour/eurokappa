@@ -153,7 +153,7 @@ block content
 				.player__button(data-remodal-action="cancel")
 					+svg("cancel")
 					span Отмена
-				.player__button.player__button--focus(data-remodal-action="confirm")
+				.player__button.player__button--focus.player__button--cancel(data-remodal-action="confirm")
 					+svg("confirm")
 					span Да
 		.remodal.modal(data-remodal-id="confirm")
@@ -164,6 +164,6 @@ block content
 				.player__button(data-remodal-action="cancel")
 					+svg("cancel")
 					span Отмена
-				.player__button.player__button--focus(data-remodal-action="confirm" id="confirmModel")
+				.player__button.player__button--focus.player__button--confirm(data-remodal-action="confirm" id="confirmModel")
 					+svg("confirm")
 					span Да
