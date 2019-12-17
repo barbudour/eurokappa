@@ -29,121 +29,125 @@ block content
 				.player__top-close
 					+svg("close")
 		.player__middle.player__middle--first
-			.player__middle-name Model_1
-			.player__middle-graph.player__middle-graph--hide#graph
-				.player__middle-graph-points
-					span 0,42 мм
-					span 0,30 мм
-					span 0,21 мм
-					span 0,10 мм
-					span 0,00 мм
-				.player__middle-graph-gradient
-			.player__middle-menu
-				.player__list.player__list--active
-					.player__list-title
-						+svg("dropdown")
-						| Действия
-					.player__list-content
-						mixin list-item(data)
-							.player__list-item(target=data.target class={"player__list-item--active": data.active, "player__list-item--check": data.check, "player__list-item--view": data.view})
-								+svg(data.icon)
-								span=data.title
-						.player__list-items
-							//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
-							+list-item({title: 'Верхняя челюсть', icon: 'up'})
-							+list-item({title: 'Нижняя челюсть', icon: 'down', active: true})
-						.player__list-items
-							+list-item({title: 'Скрыть десны', icon: 'lines', active: true})
-							+list-item({title: 'Открыть челюсть', icon: 'scull'})
-							+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
-						.player__list-items
-							+list-item({title: 'Сепарация', icon: 'separate', active: true})
-							+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph'})
-							+list-item({title: 'Сетка', icon: 'grid'})
-							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
-				.player__list.player__list--active
-					.player__list-title
-						+svg("dropdown")
-						| Вид
-					.player__list-content
-						.player__list-items
-							+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
-							+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
-							+list-item({title: 'Вид справа', icon: 'right-view', view: true})
-							+list-item({title: 'Вид слева', icon: 'left-view', view: true})
-							+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
-							+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
-			img(src='images/object.png')
+			.player__model
+				.player__model-render
+				.player__middle-name Model_1
+				.player__middle-graph.player__middle-graph--hide#graph
+					.player__middle-graph-points
+						span 0,42 мм
+						span 0,30 мм
+						span 0,21 мм
+						span 0,10 мм
+						span 0,00 мм
+					.player__middle-graph-gradient
+				.player__middle-menu
+					.player__list.player__list--active
+						.player__list-title
+							+svg("dropdown")
+							| Действия
+						.player__list-content
+							mixin list-item(data)
+								.player__list-item(target=data.target class={"player__list-item--active": data.active, "player__list-item--check": data.check, "player__list-item--view": data.view})
+									+svg(data.icon)
+									span=data.title
+							.player__list-items
+								//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
+								+list-item({title: 'Верхняя челюсть', icon: 'up'})
+								+list-item({title: 'Нижняя челюсть', icon: 'down', active: true})
+							.player__list-items
+								+list-item({title: 'Скрыть десны', icon: 'lines', active: true})
+								+list-item({title: 'Открыть челюсть', icon: 'scull'})
+								+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
+							.player__list-items
+								+list-item({title: 'Сепарация', icon: 'separate', active: true})
+								+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph'})
+								+list-item({title: 'Сетка', icon: 'grid'})
+								+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
+					.player__list.player__list--active
+						.player__list-title
+							+svg("dropdown")
+							| Вид
+						.player__list-content
+							.player__list-items
+								+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
+								+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
+								+list-item({title: 'Вид справа', icon: 'right-view', view: true})
+								+list-item({title: 'Вид слева', icon: 'left-view', view: true})
+								+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
+								+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
+				//img(src='images/object.png')
+			.player__bottom.player__bottom--first
+				.player__timeline
+					input.js-range-slider(type='text' name='timeline' value='')
+				.player__controls
+					.player__control
+						+svg('skip_previous-24px')
+					.player__control
+						+svg('fast_rewind-24px')
+					.player__control.player__control--big
+						+svg('play_arrow-24px')
+					.player__control
+						+svg('fast_forward-24px')
+					.player__control
+						+svg('skip_next-24px')
 		.player__middle.player__middle--second
-			.player__middle-name Model_2
-			.player__middle-graph.player__middle-graph--hide#graph2
-				.player__middle-graph-points
-					span 0,42 мм
-					span 0,30 мм
-					span 0,21 мм
-					span 0,10 мм
-					span 0,00 мм
-				.player__middle-graph-gradient
-			.player__middle-menu.player__middle-menu--second
-				.player__list.player__list--active
-					.player__list-title
-						+svg("dropdown")
-						| Действия
-					.player__list-content
-						.player__list-items
-							//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
-							+list-item({title: 'Верхняя челюсть', icon: 'up'})
-							+list-item({title: 'Нижняя челюсть', icon: 'down', active: true})
-						.player__list-items
-							+list-item({title: 'Скрыть десны', icon: 'lines', active: true})
-							+list-item({title: 'Открыть челюсть', icon: 'scull'})
-							+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
-						.player__list-items
-							+list-item({title: 'Сепарация', icon: 'separate', active: true})
-							+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph2'})
-							+list-item({title: 'Сетка', icon: 'grid'})
-							+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
-				.player__list.player__list--active
-					.player__list-title
-						+svg("dropdown")
-						| Вид
-					.player__list-content
-						.player__list-items
-							+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
-							+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
-							+list-item({title: 'Вид справа', icon: 'right-view', view: true})
-							+list-item({title: 'Вид слева', icon: 'left-view', view: true})
-							+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
-							+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
-			img(src='images/object.png')
-		.player__bottom.player__bottom--first
-			.player__timeline
-				input.js-range-slider(type='text' name='timeline' value='')
-			.player__controls
-				.player__control
-					+svg('skip_previous-24px')
-				.player__control
-					+svg('fast_rewind-24px')
-				.player__control.player__control--big
-					+svg('play_arrow-24px')
-				.player__control
-					+svg('fast_forward-24px')
-				.player__control
-					+svg('skip_next-24px')
-		.player__bottom.player__bottom--second
-			.player__timeline
-				input.js-range-slider(type='text' name='timeline' value='')
-			.player__controls
-				.player__control
-					+svg('skip_previous-24px')
-				.player__control
-					+svg('fast_rewind-24px')
-				.player__control.player__control--big
-					+svg('play_arrow-24px')
-				.player__control
-					+svg('fast_forward-24px')
-				.player__control
-					+svg('skip_next-24px')
+			.player__model
+				.player__model-render
+				.player__middle-name Model_2
+				.player__middle-graph.player__middle-graph--hide#graph2
+					.player__middle-graph-points
+						span 0,42 мм
+						span 0,30 мм
+						span 0,21 мм
+						span 0,10 мм
+						span 0,00 мм
+					.player__middle-graph-gradient
+				.player__middle-menu.player__middle-menu--second
+					.player__list.player__list--active
+						.player__list-title
+							+svg("dropdown")
+							| Действия
+						.player__list-content
+							.player__list-items
+								//- +list-item({title: 'Верхняя + нижняя', icon: 'up-down'})
+								+list-item({title: 'Верхняя челюсть', icon: 'up'})
+								+list-item({title: 'Нижняя челюсть', icon: 'down', active: true})
+							.player__list-items
+								+list-item({title: 'Скрыть десны', icon: 'lines', active: true})
+								+list-item({title: 'Открыть челюсть', icon: 'scull'})
+								+list-item({title: 'Скрыть аттачменты', icon: 'attach'})
+							.player__list-items
+								+list-item({title: 'Сепарация', icon: 'separate', active: true})
+								+list-item({title: 'Окклюзиограмма', icon: 'graph', target: 'graph2'})
+								+list-item({title: 'Сетка', icon: 'grid'})
+								+list-item({title: 'Режим наложения', icon: 'check', active: true, check: true})
+					.player__list.player__list--active
+						.player__list-title
+							+svg("dropdown")
+							| Вид
+						.player__list-content
+							.player__list-items
+								+list-item({title: 'Вид спереди', icon: 'front-view', active: true, view: true})
+								+list-item({title: 'Вид сзади', icon: 'back-view', view: true})
+								+list-item({title: 'Вид справа', icon: 'right-view', view: true})
+								+list-item({title: 'Вид слева', icon: 'left-view', view: true})
+								+list-item({title: 'Вид сверху', icon: 'top-view', view: true})
+								+list-item({title: 'Вид снизу', icon: 'bottom-view', view: true})
+				//img(src='images/object.png')
+			.player__bottom.player__bottom--second
+				.player__timeline
+					input.js-range-slider(type='text' name='timeline' value='')
+				.player__controls
+					.player__control
+						+svg('skip_previous-24px')
+					.player__control
+						+svg('fast_rewind-24px')
+					.player__control.player__control--big
+						+svg('play_arrow-24px')
+					.player__control
+						+svg('fast_forward-24px')
+					.player__control
+						+svg('skip_next-24px')
 	.modals
 		.remodal.modal.modal--textarea(data-remodal-id="cancel")
 			button.modal__close(data-remodal-action="close" class="remodal-close")
