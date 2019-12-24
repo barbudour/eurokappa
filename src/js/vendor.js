@@ -57,10 +57,11 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile
 
 $('.player__menu-item--view')
 	.on('click', function () {
+		let modelID = $(this).attr('data-model');
 		$(this)
 			.toggleClass('player__menu-item--active');
-		$('.player')
-			.toggleClass('player__two');
+		$(`#model${modelID}`)
+			.toggleClass('player__middle--active');
 	});
 
 $('#menu')
